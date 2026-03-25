@@ -1,0 +1,75 @@
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+.env
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Dataset files (too large for git - download separately)
+*.npy
+*.npz
+*.h5
+*.hdf5
+*.pkl
+*.pickle
+dataset/
+data/
+
+# Jupyter Notebooks checkpoints
+.ipynb_checkpoints/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+*.log
+
+# Model outputs
+*.pth
+*.pt
+*.onnx
+output/
+outputs/
+checkpoints/
+models/
+
+# Temp files
+*.tmp
+*.temp
+.cache/
+
+# Coverage
+.coverage
+htmlcov/
+.pytest_cache/
+
+# MyPy
+.mypy_cache/

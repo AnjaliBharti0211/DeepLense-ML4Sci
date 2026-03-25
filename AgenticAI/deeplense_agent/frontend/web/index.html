@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DeepLense AI Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <header class="app-header">
+            <h1>DeepLense Agent</h1>
+            <p>Gravitational Lensing Simulator</p>
+        </header>
+
+        <main class="app-main">
+            <!-- Chat Interface -->
+            <section class="chat-section">
+                <div class="chat-history" id="chat-history">
+                    <div class="message system-message">
+                        <div class="message-content">
+                            Hello! I am the DeepLense AI Agent. Describe the gravitational lensing simulation you want to run.
+                        </div>
+                    </div>
+                </div>
+                <div class="chat-input-container">
+                    <input type="text" id="chat-input" placeholder="E.g., Generate 5 CDM lens images using Model I..." autocomplete="off">
+                    <button id="send-btn">Send</button>
+                </div>
+            </section>
+
+            <!-- Results & Config Dashboard -->
+            <section class="dashboard-section">
+                <!-- Current Config -->
+                <div class="panel config-panel">
+                    <h2>Current Configuration</h2>
+                    <pre id="config-display">Waiting for input...</pre>
+                </div>
+
+                <!-- Simulation Output -->
+                <div class="panel results-panel">
+                    <h2>Simulation Output</h2>
+                    <div class="image-gallery" id="image-gallery">
+                        <p class="placeholder-text">Generated images will appear here.</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="app.js?v=20260318"></script>
+</body>
+</html>

@@ -1,0 +1,90 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "deeplense-agent"
+version = "1.0.0"
+description = "Agentic workflow for DeepLenseSim gravitational lensing simulations using Pydantic AI"
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.10"
+authors = [
+    { name = "ML4SCI", email = "ml4sci@example.com" }
+]
+keywords = [
+    "gravitational-lensing",
+    "dark-matter",
+    "simulation",
+    "pydantic-ai",
+    "agentic-workflow",
+    "deep-learning"
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: Astronomy",
+    "Topic :: Scientific/Engineering :: Physics",
+]
+dependencies = [
+    "pydantic>=2.0",
+    "pydantic-ai>=0.0.20",
+    "openai>=1.0",
+    "numpy>=1.24",
+    "pillow>=10.0",
+    "rich>=13.0",
+    "typer>=0.9",
+    "httpx>=0.25",
+    "lenstronomy==1.9.2",
+    "colossus>=1.3",
+    "astropy>=5.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0",
+    "pytest-asyncio>=0.21",
+    "pytest-cov>=4.0",
+    "mypy>=1.0",
+    "ruff>=0.1",
+    "pre-commit>=3.0",
+]
+pyhalo = [
+    "pyhalo>=2.0",
+]
+
+[project.scripts]
+deeplense-agent = "deeplense_agent.cli:app"
+
+[project.urls]
+Homepage = "https://github.com/ML4SCI/DeepLense"
+Repository = "https://github.com/mwt5345/DeepLenseSim"
+Documentation = "https://github.com/ML4SCI/DeepLense"
+
+[tool.hatch.build.targets.sdist]
+include = [
+    "/src",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/deeplense_agent"]
+
+[tool.ruff]
+target-version = "py310"
+line-length = 100
+select = ["E", "F", "I", "N", "W", "UP", "B", "C4", "SIM"]
+
+[tool.mypy]
+python_version = "3.10"
+strict = true
+warn_return_any = true
+warn_unused_ignores = true
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]
